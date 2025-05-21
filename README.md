@@ -1,6 +1,8 @@
 # 鴨ゲームかも
 これがかも音ゲーかも。
 
+BTW the following tutorial is for using the terminal! However the practice mentioned in these commands is similar to that of Github Desktop. Make sure to create seperate branch for their respective feature/update, pull the latest code, and create pull request (pr) when done!
+
 ### [Commands To Know] ###
 Before executing command locate the terminal to your desired workspace:
 - git clone link (Creates a clone of the contents from github to your machine)
