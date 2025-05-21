@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxgm4irgc77we"]
+
+[ext_resource type="AudioStream" uid="uid://bewlwe77wffj8" path="res://assets/music/DuckSong.mp3" id="1_rjav5"]
+[ext_resource type="Texture2D" uid="uid://w1uit37sb7ye" path="res://assets/sprite/arrows/Sensor_L.png" id="2_de4kp"]
+[ext_resource type="Script" path="res://scripts/Sensor.gd" id="2_xhcov"]
+[ext_resource type="Texture2D" uid="uid://ded363yi3nnth" path="res://assets/sprite/arrows/Sensor_R.png" id="4_gd38p"]
+[ext_resource type="Texture2D" uid="uid://6i6d4jt6jjsu" path="res://assets/sprite/arrows/Sensor_U.png" id="5_0pbin"]
+[ext_resource type="Texture2D" uid="uid://38rb1abs4ggb" path="res://assets/sprite/arrows/Sensor_D.png" id="6_chyg4"]
+[ext_resource type="PackedScene" uid="uid://da7pv1x4a3c0e" path="res://scenes/FallingKey.tscn" id="7_vi726"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="DuckMoosic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_rjav5")
+volume_db = -10.0
+autoplay = true
+
+[node name="Left_Sensor" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(370, 509)
+scale = Vector2(10, 10)
+texture = ExtResource("2_de4kp")
+script = ExtResource("2_xhcov")
+key_name = "ui_left"
+
+[node name="Right_Sensor" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(820, 509)
+scale = Vector2(10, 10)
+texture = ExtResource("4_gd38p")
+script = ExtResource("2_xhcov")
+key_name = "ui_right"
+
+[node name="Up_Sensor" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(520, 509)
+scale = Vector2(10, 10)
+texture = ExtResource("5_0pbin")
+script = ExtResource("2_xhcov")
+key_name = "ui_up"
+
+[node name="Down_Sensor" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(670, 509)
+scale = Vector2(10, 10)
+texture = ExtResource("6_chyg4")
+script = ExtResource("2_xhcov")
+key_name = "ui_down"
+
+[node name="FallingKey" parent="." instance=ExtResource("7_vi726")]
