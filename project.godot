@@ -10,13 +10,20 @@ config_version=5
 
 [application]
 
-config/name="Rhythm Of Olympus"
+config/name="鴨ゲームかも"
+run/main_scene="uid://cjpntnaqddbji"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
 window/stretch/mode="viewport"
+
+[importer_defaults]
+
+animation_library={
+&"animation/fps": 60.0
+}
 
 [rendering]
 
