@@ -13,7 +13,6 @@
 [node name="DuckMoosic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_rjav5")
 volume_db = -10.0
-autoplay = true
 
 [node name="Left_Sensor" type="Sprite2D" parent="."]
 texture_filter = 1
