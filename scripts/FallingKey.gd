@@ -7,14 +7,18 @@ var right = preload("res://assets/sprite/arrows/Right.png")
 var up = preload("res://assets/sprite/arrows/Up.png")
 var down = preload("res://assets/sprite/arrows/Down.png")
 
+var has_passed: bool = false
+var pass_threshold = 509
+
 func _init():
 	set_process(false)
 
 func _process(delta):
 	global_position += Vector2(0, fall_speed)
-	if global_position.y > 509 and not $Timer.is_stopped():
-		print($Timer.wait_time - $Timer.time_left)
+	if global_position.y > pass_threshold and not $Timer.is_stopped():
+		#print($Timer.wait_time - $Timer.time_left)
 		$Timer.stop()
+		has_passed = true
 
 func Setup(target_x: float, sprite):
 	global_position = Vector2(target_x, init_y_pos)

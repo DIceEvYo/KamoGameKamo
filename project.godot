@@ -15,6 +15,12 @@ run/main_scene="uid://cjpntnaqddbji"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+
+[autoload]
+
+Signals="*res://scripts/signals.gd"
+
+
 [display]
 
 window/stretch/mode="viewport"
