@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="鴨ゲームかも"
-run/main_scene="uid://dtxm5o70bxtte"
+run/main_scene="uid://cjpntnaqddbji"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
 
 [autoload]
 
 Signals="*res://scripts/signals.gd"
+
 
 [display]
 
