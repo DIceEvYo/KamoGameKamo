@@ -12,4 +12,3 @@ process_mode = 3
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_p57ef")]
-process_mode = 3
