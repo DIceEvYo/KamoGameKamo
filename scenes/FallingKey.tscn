@@ -1,13 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://da7pv1x4a3c0e"]
+[gd_scene load_steps=2 format=3 uid="uid://da7pv1x4a3c0e"]
 
 [ext_resource type="Script" uid="uid://djy2wsivrrsly" path="res://scripts/FallingKey.gd" id="1_ck36e"]
-[ext_resource type="Texture2D" uid="uid://bw41brt45r1g4" path="res://assets/sprite/arrows/Down.png" id="1_v3v12"]
 
 [node name="FallingKey" type="Sprite2D"]
 texture_filter = 1
-position = Vector2(670, -100)
 scale = Vector2(10, 10)
-texture = ExtResource("1_v3v12")
 script = ExtResource("1_ck36e")
 
 [node name="Timer" type="Timer" parent="."]
