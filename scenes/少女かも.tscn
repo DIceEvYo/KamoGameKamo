@@ -1,14 +1,46 @@
-[gd_scene load_steps=10 format=3 uid="uid://2cqjtteocral"]
+[gd_scene load_steps=14 format=3 uid="uid://2cqjtteocral"]
 
-[ext_resource type="Texture2D" uid="uid://jli4pksw84rv" path="res://assets/イラスト/イラストファイル.png" id="1_4btf0"]
 [ext_resource type="Script" uid="uid://3kuqucp6fo86" path="res://scripts/少女かも.gd" id="1_kvpdk"]
 [ext_resource type="Texture2D" uid="uid://cq7gkx7qa5xea" path="res://assets/イラスト/idle-1/1.png" id="2_0thlb"]
+[ext_resource type="Texture2D" uid="uid://cd8hrsdhor1hg" path="res://assets/イラスト/forward-1/1.png" id="2_ginfj"]
+[ext_resource type="Texture2D" uid="uid://d12db82epyo8f" path="res://assets/イラスト/BANG-1/1.png" id="2_p0ndl"]
+[ext_resource type="Texture2D" uid="uid://biiy3isihj2i" path="res://assets/イラスト/BANG-1/2.png" id="3_5rijk"]
+[ext_resource type="Texture2D" uid="uid://dluj263mpdmiu" path="res://assets/イラスト/forward-1/2.png" id="3_p0ndl"]
 [ext_resource type="Texture2D" uid="uid://cx8mwi5ix4s5p" path="res://assets/イラスト/idle-1/2.png" id="3_vl4l5"]
-[ext_resource type="Script" uid="uid://n5xn3v5f5fq5" path="res://scripts/rocking.gd" id="3_xbthf"]
 [ext_resource type="Texture2D" uid="uid://cuv60jnp2k4po" path="res://assets/イラスト/idle-1/3.png" id="4_5i83s"]
+[ext_resource type="Texture2D" uid="uid://1o0fi1e27y1i" path="res://assets/イラスト/forward-1/3.png" id="4_5rijk"]
+[ext_resource type="Texture2D" uid="uid://b1o16m1nfid3g" path="res://assets/イラスト/BANG-1/3.png" id="4_o4f2h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ginfj"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p0ndl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5rijk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o4f2h")
+}],
+"loop": false,
+"name": &"bang-1",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ginfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p0ndl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5rijk")
+}],
+"loop": false,
+"name": &"front-1",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_0thlb")
@@ -30,7 +62,7 @@ size = Vector2(252, 271.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbthf"]
 size = Vector2(339, 44)
 
-[node name="Node2D" type="Node2D"]
+[node name="かわいいあああああああああああああああああああああああああああああああああああああああああ" type="Node2D"]
 texture_filter = 1
 
 [node name="少女かも" type="CharacterBody2D" parent="."]
@@ -43,19 +75,8 @@ metadata/_edit_group_ = true
 texture_filter = 1
 scale = Vector2(0.2935, 0.2935)
 sprite_frames = SubResource("SpriteFrames_ginfj")
-animation = &"idle-1"
+animation = &"bang-1"
 autoplay = "idle-1"
-frame_progress = 0.0809276
-script = ExtResource("3_xbthf")
-
-[node name="Sprite2D" type="Sprite2D" parent="少女かも"]
-visible = false
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_4btf0")
-
-[node name="RockTimer" type="Timer" parent="少女かも"]
-wait_time = 0.2
-autostart = true
 
 [node name="Timer" type="Timer" parent="少女かも"]
 wait_time = 0.2
@@ -73,5 +94,5 @@ metadata/_edit_group_ = true
 position = Vector2(-0.5, -12)
 shape = SubResource("RectangleShape2D_xbthf")
 
-[connection signal="timeout" from="少女かも/RockTimer" to="少女かも/AnimatedSprite2D" method="_on_rock_timer_timeout"]
+[connection signal="animation_finished" from="少女かも/AnimatedSprite2D" to="少女かも" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="少女かも/Timer" to="少女かも" method="_on_timer_timeout"]
