@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://2cqjtteocral"]
+
+[ext_resource type="Texture2D" uid="uid://jli4pksw84rv" path="res://assets/イラスト/イラストファイル.png" id="1_4btf0"]
+[ext_resource type="Script" uid="uid://3kuqucp6fo86" path="res://scripts/少女かも.gd" id="1_kvpdk"]
+[ext_resource type="Texture2D" uid="uid://cq7gkx7qa5xea" path="res://assets/イラスト/idle-1/1.png" id="2_0thlb"]
+[ext_resource type="Texture2D" uid="uid://cx8mwi5ix4s5p" path="res://assets/イラスト/idle-1/2.png" id="3_vl4l5"]
+[ext_resource type="Script" uid="uid://n5xn3v5f5fq5" path="res://scripts/rocking.gd" id="3_xbthf"]
+[ext_resource type="Texture2D" uid="uid://cuv60jnp2k4po" path="res://assets/イラスト/idle-1/3.png" id="4_5i83s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ginfj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0thlb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vl4l5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5i83s")
+}],
+"loop": true,
+"name": &"idle-1",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvpdk"]
+size = Vector2(252, 271.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbthf"]
+size = Vector2(339, 44)
+
+[node name="Node2D" type="Node2D"]
+texture_filter = 1
+
+[node name="少女かも" type="CharacterBody2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 324)
+script = ExtResource("1_kvpdk")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="少女かも"]
+texture_filter = 1
+scale = Vector2(0.2935, 0.2935)
+sprite_frames = SubResource("SpriteFrames_ginfj")
+animation = &"idle-1"
+autoplay = "idle-1"
+frame_progress = 0.0809276
+script = ExtResource("3_xbthf")
+
+[node name="Sprite2D" type="Sprite2D" parent="少女かも"]
+visible = false
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_4btf0")
+
+[node name="RockTimer" type="Timer" parent="少女かも"]
+wait_time = 0.2
+autostart = true
+
+[node name="Timer" type="Timer" parent="少女かも"]
+wait_time = 0.2
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="少女かも"]
+position = Vector2(15, 8)
+shape = SubResource("RectangleShape2D_kvpdk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(576, 501)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, -12)
+shape = SubResource("RectangleShape2D_xbthf")
+
+[connection signal="timeout" from="少女かも/RockTimer" to="少女かも/AnimatedSprite2D" method="_on_rock_timer_timeout"]
+[connection signal="timeout" from="少女かも/Timer" to="少女かも" method="_on_timer_timeout"]
