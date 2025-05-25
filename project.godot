@@ -21,12 +21,8 @@ Signals="*res://scripts/signals.gd"
 
 [display]
 
-<<<<<<< Updated upstream
-window/stretch/mode="viewport"
-=======
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
->>>>>>> Stashed changes
 
 [importer_defaults]
 
