@@ -1,6 +1,7 @@
 extends Sprite2D
 
-@export var fall_speed: float = 425.46
+#@export var fall_speed: float = 425.46
+@export var fall_speed: float = 1000
 var init_y_pos: float = -360
 var left = preload("res://assets/sprite/arrows/Left.png")
 var right = preload("res://assets/sprite/arrows/Right.png")

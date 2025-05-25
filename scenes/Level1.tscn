@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dxgm4irgc77we"]
+[gd_scene load_steps=18 format=3 uid="uid://dxgm4irgc77we"]
 
 [ext_resource type="Texture2D" uid="uid://w1uit37sb7ye" path="res://assets/sprite/arrows/Sensor_L.png" id="2_de4kp"]
 [ext_resource type="Script" uid="uid://kqnv6d2yogtv" path="res://scripts/Sensor.gd" id="2_xhcov"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bon0nrdinmei0" path="res://assets/sprite/arrows/Up.png" id="8_2meft"]
 [ext_resource type="PackedScene" uid="uid://b3rmpuynnqwnl" path="res://scenes/score.tscn" id="8_ecr63"]
 [ext_resource type="Texture2D" uid="uid://bw41brt45r1g4" path="res://assets/sprite/arrows/Down.png" id="10_0xqs2"]
+[ext_resource type="PackedScene" uid="uid://2cqjtteocral" path="res://scenes/少女かも.tscn" id="13_0xqs2"]
 [ext_resource type="PackedScene" uid="uid://dfe05ay3nxt8t" path="res://scenes/level_editor.tscn" id="13_2meft"]
 
 [sub_resource type="Animation" id="Animation_2meft"]
@@ -56,9 +57,6 @@ glow_enabled = true
 
 [node name="Level1" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-
 [node name="Background" type="Sprite2D" parent="."]
 
 [node name="Left_Sensor" type="Sprite2D" parent="."]
@@ -68,10 +66,6 @@ scale = Vector2(10, 10)
 texture = ExtResource("2_de4kp")
 script = ExtResource("2_xhcov")
 key_name = "ui_left"
-
-[node name="SpawnTimer" type="Timer" parent="Left_Sensor"]
-one_shot = true
-autostart = true
 
 [node name="GlowOverlay" type="Sprite2D" parent="Left_Sensor"]
 modulate = Color(1.3, 1.3, 1.3, 1)
@@ -92,10 +86,6 @@ texture = ExtResource("4_gd38p")
 script = ExtResource("2_xhcov")
 key_name = "ui_right"
 
-[node name="SpawnTimer" type="Timer" parent="Right_Sensor"]
-one_shot = true
-autostart = true
-
 [node name="GlowOverlay" type="Sprite2D" parent="Right_Sensor"]
 modulate = Color(1.3, 1.3, 1.3, 1)
 position = Vector2(0.0500006, 1.27032e-06)
@@ -115,10 +105,6 @@ texture = ExtResource("5_0pbin")
 script = ExtResource("2_xhcov")
 key_name = "ui_up"
 
-[node name="SpawnTimer" type="Timer" parent="Up_Sensor"]
-one_shot = true
-autostart = true
-
 [node name="GlowOverlay" type="Sprite2D" parent="Up_Sensor"]
 modulate = Color(1.3, 1.3, 1.3, 1)
 position = Vector2(0.0500006, 1.27032e-06)
@@ -137,10 +123,6 @@ scale = Vector2(10, 10)
 texture = ExtResource("6_chyg4")
 script = ExtResource("2_xhcov")
 key_name = "ui_down"
-
-[node name="SpawnTimer" type="Timer" parent="Down_Sensor"]
-one_shot = true
-autostart = true
 
 [node name="GlowOverlay" type="Sprite2D" parent="Down_Sensor"]
 modulate = Color(1.3, 1.3, 1.3, 1)
@@ -162,7 +144,6 @@ environment = SubResource("Environment_ecr63")
 
 [node name="LevelEditor" parent="." instance=ExtResource("13_2meft")]
 
-[connection signal="timeout" from="Left_Sensor/SpawnTimer" to="Left_Sensor" method="_on_spawn_timer_timeout"]
-[connection signal="timeout" from="Right_Sensor/SpawnTimer" to="Right_Sensor" method="_on_spawn_timer_timeout"]
-[connection signal="timeout" from="Up_Sensor/SpawnTimer" to="Up_Sensor" method="_on_spawn_timer_timeout"]
-[connection signal="timeout" from="Down_Sensor/SpawnTimer" to="Down_Sensor" method="_on_spawn_timer_timeout"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Node2D" parent="." instance=ExtResource("13_0xqs2")]

@@ -13,6 +13,7 @@ var perfect_press_threshold: float = 30
 var great_press_threshold: float = 50
 var good_press_threshold: float = 60
 var ok_press_threshold: float = 80
+var miss_press_threshold: float = 100
 # otherwise, miss
 
 var perfect_press_score: float = 250
@@ -64,7 +65,6 @@ func _process(_delta):
 			$AnimationPlayer.play("key_hit")
 			
 			var press_score_text: String = ""
-			
 			if distance_from_pass < perfect_press_threshold:
 				Signals.IncrementScore.emit(perfect_press_score)
 				press_score_text = "PERFECT"
@@ -81,17 +81,14 @@ func _process(_delta):
 				Signals.IncrementScore.emit(ok_press_score)
 				press_score_text = "OK"
 				Signals.IncrementCombo.emit()
-			else:
+			elif distance_from_pass < miss_press_threshold:
 				press_score_text = "MISS"
-				Signals.ResetCombo.emit()
-			
+				Signals.ResetCombo.emit()	
 			key_to_pop.queue_free()
-			
 			var st_inst = score_text.instantiate()
 			get_tree().get_root().call_deferred("add_child", st_inst)
 			st_inst.SetTextInfo(press_score_text)
 			st_inst.call_deferred("_appear_at", key_to_pop.global_position + Vector2(0, -20))
-			#11:05 rhythm game tut
 
 
 func CreateFallingKey(button_name: String):
@@ -99,11 +96,4 @@ func CreateFallingKey(button_name: String):
 		var falling_key_scene = falling_key.instantiate()
 		get_tree().get_root().call_deferred("add_child", falling_key_scene)
 		falling_key_scene.Setup(position.x, key_name)
-		
 		falling_key_queue.push_back(falling_key_scene)
-
-
-func _on_spawn_timer_timeout() -> void:
-	#CreateFallingKey()
-	$SpawnTimer.wait_time = randf_range(0.4,3)
-	$SpawnTimer.start()
