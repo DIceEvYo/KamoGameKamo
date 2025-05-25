@@ -34,9 +34,6 @@ func _ready() -> void:
 # Called every frame. "delta" is the elapsed time since the previous fram,e
 func _process(_delta):
 	
-	if Input.is_action_just_pressed(key_name):
-		Signals.KeyListenerPress.emit(key_name, array_num)
-	
 	# Make sure there is a falling key to check for this given key
 	if falling_key_queue.size() > 0:
 		
@@ -53,7 +50,7 @@ func _process(_delta):
 			
 	# If key is pressed, pop from the queue and calculate distance from critical point
 	if Input.is_action_just_pressed(key_name):
-		
+		Signals.KeyListenerPress.emit(key_name, array_num)
 		var key_to_pop = falling_key_queue.pop_front()
 		
 		if key_to_pop != null:
@@ -101,9 +98,3 @@ func CreateFallingKey(button_name: String):
 		falling_key_scene.Setup(position.x, key_name)
 		
 		falling_key_queue.push_back(falling_key_scene)
-
-
-func _on_spawn_timer_timeout() -> void:
-	#CreateFallingKey()
-	$SpawnTimer.wait_time = randf_range(0.4,3)
-	$SpawnTimer.start()

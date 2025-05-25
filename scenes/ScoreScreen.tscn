@@ -1,0 +1,104 @@
+[gd_scene load_steps=3 format=3 uid="uid://pwd0d4jn6cyp"]
+
+[ext_resource type="FontFile" uid="uid://crk0ecmel4ny" path="res://assets/font/Atop-R99O3.ttf" id="1_e30jd"]
+[ext_resource type="Script" uid="uid://dih0la8e7w4ys" path="res://scenes/score_screen.gd" id="1_gb67u"]
+
+[node name="ScoreScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gb67u")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -185.0
+offset_right = 188.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.866667, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_e30jd")
+theme_override_font_sizes/font_size = 60
+text = "Final Score"
+horizontal_alignment = 1
+
+[node name="RankLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(6.93083e-06, 0.943734, 0.948748, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_e30jd")
+theme_override_font_sizes/font_size = 40
+text = "Rank: D"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.345098, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_e30jd")
+theme_override_font_sizes/font_size = 40
+text = "Score: 0"
+horizontal_alignment = 1
+
+[node name="ComboLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.534625, 0.813562, 3.85046e-07, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_e30jd")
+theme_override_font_sizes/font_size = 40
+text = "Max combo: 0"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="RetryButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.765218, 0.687954, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_e30jd")
+theme_override_font_sizes/font_size = 40
+text = "Retry"
+
+[node name="MenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.847059, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_e30jd")
+theme_override_font_sizes/font_size = 40
+text = "Return to Menu"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RetryButton" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuButton" to="." method="_on_return_to_main_menu_pressed"]

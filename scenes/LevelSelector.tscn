@@ -13,16 +13,27 @@ grow_vertical = 2
 script = ExtResource("1_8ixoo")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.5
+offset_top = -51.0
+offset_right = 131.5
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_emkfd")
-theme_override_font_sizes/normal_font_size = 42
-bbcode_enabled = true
-text = "[center]Select Level"
+theme_override_colors/font_color = Color(0.440142, 0.595413, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_emkfd")
+theme_override_font_sizes/font_size = 20
+text = "Select Level"
+horizontal_alignment = 1
 
 [node name="Duckageddon Normal" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -39,3 +50,6 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_emkfd")
 theme_override_font_sizes/font_size = 20
 text = "DUCKAGEDDON (Hard)"
+
+[connection signal="pressed" from="VBoxContainer/Duckageddon Normal" to="." method="_on_duckageddon_normal_pressed"]
+[connection signal="pressed" from="VBoxContainer/Duckageddon Hard" to="." method="_on_duckageddon_hard_pressed"]

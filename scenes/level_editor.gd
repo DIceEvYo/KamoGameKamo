@@ -2,7 +2,7 @@ extends Node2D
 
 # Set this constant before the game starts
 const in_edit_mode: bool = false
-var current_level_name = "DUCKAGEDDON"
+var current_level_name = GameState.current_level_name
 
 const init_y_pos = -360
 const pass_y = 509
@@ -60,4 +60,8 @@ func SpawnFallingKey(button_name: String, delay: float):
 
 func _on_duck_moosic_finished() -> void:
 	print(fk_output_arr)
-	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	GameState.final_score = %Score.score
+	GameState.max_combo = %Score.combo_count
+	$ScreenFader.fade_in(1.0)
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file("res://scenes/ScoreScreen.tscn")
