@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bon0nrdinmei0"
-path="res://.godot/imported/Up.png-7048e5b5dc8d51bfe8389eb928f67b00.ctex"
+uid="uid://diwarbog7lseg"
+path="res://.godot/imported/up.png-bfdd177c9b0cd75aa09f436e10eef1dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite/arrows/Up.png"
-dest_files=["res://.godot/imported/Up.png-7048e5b5dc8d51bfe8389eb928f67b00.ctex"]
+source_file="res://assets/sprite/arrows/up.png"
+dest_files=["res://.godot/imported/up.png-bfdd177c9b0cd75aa09f436e10eef1dd.ctex"]
 
 [params]
 
