@@ -4,11 +4,19 @@ var came_from_pause_menu: bool = false
 
 func _on_back_pressed() -> void:
 	if GameState.came_from_pause_menu:
-		get_tree().paused = true
 		GameState.came_from_pause_menu = false
-		get_parent().visible = true
+		
+		var pause_menu = get_tree().get_root().get_node_or_null("GameManager/CanvasLayer/PauseMenu")
+		if pause_menu:
+			pause_menu.visible = true
+			
+	elif GameState.came_from_main_menu:
+		GameState.came_from_main_menu = false
+		
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
 
 @onready var volume_slider = %Volume
 @onready var mute_checkbox = %Mute

@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://tlkgqldxw20n" path="res://assets/font/CherryBombOne-Regular.ttf" id="3_2iy26"]
 
 [node name="Options" type="Control"]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -16,15 +17,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c2u1v")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -672.0
+offset_top = -377.0
+offset_right = 656.0
+offset_bottom = 379.0
+color = Color(0, 0, 0, 0.627451)
+
 [node name="イラストファイル1" type="Sprite2D" parent="."]
 position = Vector2(-19.5, -4)
 scale = Vector2(2.017, 1)
 texture = ExtResource("2_kv8mn")
 
+
 [node name="Bruhduckpiano2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_2iy26")
 volume_db = -16.55
-autoplay = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

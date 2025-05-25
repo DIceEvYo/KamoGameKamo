@@ -147,5 +147,5 @@ environment = SubResource("Environment_ecr63")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="かわいいあああああああああああああああああああああああああああああああああああああああああ" parent="." instance=ExtResource("13_0xqs2")]
+[node name="かわいい" parent="." instance=ExtResource("13_0xqs2")]
 position = Vector2(-1, -142)

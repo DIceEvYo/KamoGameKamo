@@ -62,7 +62,7 @@ size = Vector2(252, 271.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbthf"]
 size = Vector2(339, 44)
 
-[node name="かわいいあああああああああああああああああああああああああああああああああああああああああ" type="Node2D"]
+[node name="かわいい" type="Node2D"]
 texture_filter = 1
 
 [node name="少女かも" type="CharacterBody2D" parent="."]
