@@ -4,7 +4,7 @@
 
 [node name="FallingKey" type="Sprite2D"]
 texture_filter = 1
-scale = Vector2(10, 10)
+scale = Vector2(0.15, 0.15)
 script = ExtResource("1_ck36e")
 
 [node name="Timer" type="Timer" parent="."]
