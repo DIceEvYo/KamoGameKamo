@@ -61,8 +61,8 @@ glow_enabled = true
 
 [node name="Left_Sensor" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.15, 0.15)
 position = Vector2(353, 203)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_de4kp")
 script = ExtResource("2_xhcov")
 key_name = "ui_left"
@@ -80,8 +80,8 @@ libraries = {
 
 [node name="Right_Sensor" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.15, 0.15)
 position = Vector2(812, 209)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("4_gd38p")
 script = ExtResource("2_xhcov")
 key_name = "ui_right"
@@ -99,8 +99,8 @@ libraries = {
 
 [node name="Up_Sensor" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.15, 0.15)
 position = Vector2(490, 451)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("5_0pbin")
 script = ExtResource("2_xhcov")
 key_name = "ui_up"
@@ -118,8 +118,8 @@ libraries = {
 
 [node name="Down_Sensor" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.15, 0.15)
 position = Vector2(640, 451)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("6_chyg4")
 script = ExtResource("2_xhcov")
 key_name = "ui_down"
