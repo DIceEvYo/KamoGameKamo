@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjpntnaqddbji"]
+[gd_scene load_steps=4 format=3 uid="uid://cjpntnaqddbji"]
 
 [ext_resource type="Script" uid="uid://m8x1fxxo1ufx" path="res://menu.gd" id="1_yqeox"]
+[ext_resource type="FontFile" uid="uid://crk0ecmel4ny" path="res://assets/font/Atop-R99O3.ttf" id="2_vjb58"]
 
 [sub_resource type="Theme" id="Theme_yqeox"]
 
@@ -22,10 +23,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -143.5
-offset_top = -66.5
-offset_right = 143.5
-offset_bottom = 66.5
+offset_left = -303.5
+offset_top = -183.0
+offset_right = 303.5
+offset_bottom = 183.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -33,18 +34,40 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 20
 
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.857825, 0.744954, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 50
+text = "鴨ゲームかも
+Probably a Duck Game"
+horizontal_alignment = 1
+
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_yqeox")
-text = "Play"
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 40
+text = "プレイ
+Play"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Options"
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 40
+text = "設定
+Options"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_font_sizes/font_size = 40
+text = "やめる
+Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

@@ -19,9 +19,9 @@ func _on_resume_button_pressed() -> void:
 	_is_paused = false
 
 func _on_options_button_pressed() -> void:
-	_is_paused = false
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/options.tscn")
 
 func _on_exit_button_pressed() -> void:
-	_is_paused = false
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")

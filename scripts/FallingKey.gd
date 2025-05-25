@@ -11,22 +11,44 @@ var down = preload("res://assets/sprite/arrows/Down.png")
 var has_passed: bool = false
 var pass_threshold = 509
 
+var move_direction: Vector2
+var pass_position: Vector2
+
 func _init():
 	set_process(false)
 
 func _process(delta):
-	global_position += Vector2(0, fall_speed * delta)
-	if global_position.y > pass_threshold and not $Timer.is_stopped():
+	global_position += move_direction * fall_speed * delta
+	
+	if not $Timer.is_stopped() and global_position.distance_to(pass_position) < 20:
 		#print($Timer.wait_time - $Timer.time_left)
 		$Timer.stop()
 		has_passed = true
 
-func Setup(target_x: float, sprite: String):
-	global_position = Vector2(target_x, init_y_pos)
-	if(sprite == "ui_left"): texture = left
-	elif(sprite == "ui_up"): texture = up
-	elif(sprite == "ui_down"): texture = down
-	elif(sprite == "ui_right"): texture = right
+
+func Setup(target_pos: Vector2, direction: String):
+	match direction:
+		"ui_left":
+			texture = left
+			global_position = Vector2(-100, target_pos.y)
+			move_direction = Vector2(1, 0)
+			pass_position = Vector2(target_pos.x, target_pos.y)
+		"ui_right":
+			texture = right
+			global_position = Vector2(1280, target_pos.y)
+			move_direction = Vector2(-1, 0)
+			pass_position = Vector2(target_pos.x, target_pos.y)
+		"ui_up":
+			texture = up
+			global_position = Vector2(target_pos.x, -100)
+			move_direction = Vector2(0, -1)
+			pass_position = Vector2(target_pos.x, target_pos.y)
+		"ui_down":
+			texture = down
+			global_position = Vector2(target_pos.x, 720)
+			move_direction = Vector2(0, -1)
+			pass_position = Vector2(target_pos.x, target_pos.y)
+			
 	set_process(true)
 
 

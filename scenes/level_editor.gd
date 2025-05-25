@@ -3,6 +3,8 @@ extends Node2D
 # Set this constant before the game starts
 const in_edit_mode: bool = false
 
+@onready var screen_fader = get_node("/root/GameManager/ScreenFader")
+
 var current_level_name = GameState.current_level_name
 
 const init_y_pos = -360
@@ -66,8 +68,11 @@ func SpawnFallingKey(button_name: String, delay: float):
 
 func _on_duck_moosic_finished() -> void:
 	print(fk_output_arr)
+	
 	GameState.final_score = %Score.score
 	GameState.max_combo = %Score.combo_count
-	$ScreenFader.fade_in(1.0)
-	await get_tree().create_timer(1.0).timeout
+	
+	screen_fader.fade_in(1.0)
+	await screen_fader.fade_finished
+	
 	get_tree().change_scene_to_file("res://scenes/ScoreScreen.tscn")

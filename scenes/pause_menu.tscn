@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dewldqjxnsibk"]
+[gd_scene load_steps=3 format=3 uid="uid://dewldqjxnsibk"]
 
 [ext_resource type="Script" uid="uid://5svchfdky1xm" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="FontFile" uid="uid://crk0ecmel4ny" path="res://assets/font/Atop-R99O3.ttf" id="2_myx47"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -23,9 +24,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -285.0
-offset_top = -147.0
-offset_right = 334.0
+offset_left = -343.0
+offset_top = -190.0
+offset_right = 335.0
 offset_bottom = 266.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -47,19 +48,28 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="GridContainer"]
 layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 40
 text = "🦆 Paused  🦆"
 horizontal_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 30
 text = "Resume"
 
 [node name="OptionsButton" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 30
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="GridContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 30
 text = "Exit"
 
 [connection signal="pressed" from="GridContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
