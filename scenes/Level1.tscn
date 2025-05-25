@@ -147,4 +147,4 @@ environment = SubResource("Environment_ecr63")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="Node2D" parent="." instance=ExtResource("13_0xqs2")]
+[node name="かわいいあああああああああああああああああああああああああああああああああああああああああ" parent="." instance=ExtResource("13_0xqs2")]
