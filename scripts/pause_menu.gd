@@ -1,12 +1,13 @@
 extends Control
 
-@onready var music_player = get_node("/root/GameManager/DuckMoosic")
-
+@onready var music_player = get_node("/root/GameManager/Level1/LevelEditor/DuckMoosic")
+@onready var 少女 = get_node("/root/GameManager/Level1/かわいいあああああああああああああああああああああああああああああああああああああああああ/少女/AnimatedSprite2D")
 func set_paused(value: bool):
 	visible = value
 	GameState.is_game_paused = value
 	get_tree().paused = value
 	music_player.stream_paused = value
+	少女.pause()
 
 var _is_paused : bool = false:
 	set = set_paused

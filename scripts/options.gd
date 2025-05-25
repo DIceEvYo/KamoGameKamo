@@ -4,7 +4,6 @@ var came_from_pause_menu: bool = false
 
 func _on_back_pressed() -> void:
 	queue_free()
-	
 	if GameState.came_from_pause_menu:
 		get_tree().paused = true
 		GameState.came_from_pause_menu = false
@@ -12,8 +11,8 @@ func _on_back_pressed() -> void:
 	else:
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
-@onready var volume_slider = $Volume
-@onready var mute_checkbox = $Mute
+@onready var volume_slider = %Volume
+@onready var mute_checkbox = %Mute
 
 func _on_volume_value_changed(slider_value: float) -> void:
 	var bus_index = AudioServer.get_bus_index("Master")
