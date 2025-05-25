@@ -31,8 +31,9 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.440142, 0.595413, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_emkfd")
-theme_override_font_sizes/font_size = 20
-text = "Select Level"
+theme_override_font_sizes/font_size = 50
+text = "レベルセレクト
+Select Level"
 horizontal_alignment = 1
 
 [node name="Duckageddon Normal" type="Button" parent="VBoxContainer"]
@@ -40,16 +41,18 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.835294, 0.835294, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_emkfd")
-theme_override_font_sizes/font_size = 20
-text = "DUCKAGEDDON (Normal)"
+theme_override_font_sizes/font_size = 40
+text = "ダッカゲドン（ノーマル）
+DUCKAGEDDON (Normal)"
 
 [node name="Duckageddon Hard" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.262745, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_emkfd")
-theme_override_font_sizes/font_size = 20
-text = "DUCKAGEDDON (Hard)"
+theme_override_font_sizes/font_size = 40
+text = "ダッカゲドン（ハード）
+DUCKAGEDDON (Hard)"
 
 [connection signal="pressed" from="VBoxContainer/Duckageddon Normal" to="." method="_on_duckageddon_normal_pressed"]
 [connection signal="pressed" from="VBoxContainer/Duckageddon Hard" to="." method="_on_duckageddon_hard_pressed"]
