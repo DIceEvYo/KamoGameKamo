@@ -23,6 +23,7 @@ var ok_press_score: float = 20
 
 
 func _ready() -> void:
+	Signals.ClearNotes.connect(clear_notes)
 	$GlowOverlay.modulate = Color(1, 1, 1, 0)
 	Signals.CreateFallingKey.connect(CreateFallingKey)
 	
@@ -31,6 +32,11 @@ func _ready() -> void:
 		"ui_down": array_num = 1
 		"ui_up": array_num = 2
 		"ui_right": array_num = 3
+
+func clear_notes():
+	for note in falling_key_queue:
+		note.queue_free()
+	falling_key_queue.clear()
 
 # Called every frame. "delta" is the elapsed time since the previous fram,e
 func _process(_delta):
@@ -86,7 +92,6 @@ func _process(_delta):
 			get_tree().get_root().call_deferred("add_child", st_inst)
 			st_inst.SetTextInfo("MISS")
 			st_inst.call_deferred("_appear_at", global_position + Vector2(0, -20))
-
 
 func CreateFallingKey(button_name: String):
 	if button_name == key_name:
