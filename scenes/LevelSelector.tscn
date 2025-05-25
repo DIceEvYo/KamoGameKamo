@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1x4g10o2mhyl"]
+[gd_scene load_steps=5 format=3 uid="uid://b1x4g10o2mhyl"]
 
 [ext_resource type="Script" uid="uid://wvtxvmbqigoc" path="res://scenes/level_selector.gd" id="1_8ixoo"]
 [ext_resource type="AudioStream" uid="uid://3yheld1jpkol" path="res://assets/music/bruhduckpiano2.mp3" id="2_5wh75"]
-[ext_resource type="FontFile" uid="uid://crk0ecmel4ny" path="res://assets/font/Atop-R99O3.ttf" id="2_emkfd"]
+[ext_resource type="Texture2D" uid="uid://cnp65gj6i5s7x" path="res://assets/イラスト/イラストファイル/イラストファイル1.png" id="2_lm2ad"]
+[ext_resource type="FontFile" uid="uid://tlkgqldxw20n" path="res://assets/font/CherryBombOne-Regular.ttf" id="3_emkfd"]
 
 [node name="LevelSelector" type="Control"]
 layout_mode = 3
@@ -12,6 +13,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8ixoo")
+
+[node name="イラストファイル1" type="Sprite2D" parent="."]
+position = Vector2(677.5, 414)
+scale = Vector2(2.109, 1)
+texture = ExtResource("2_lm2ad")
 
 [node name="Bruhduckpiano2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_5wh75")
@@ -34,9 +40,9 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.440142, 0.595413, 1, 1)
+theme_override_colors/font_color = Color(0.576471, 0.341176, 0.654902, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_emkfd")
+theme_override_fonts/font = ExtResource("3_emkfd")
 theme_override_font_sizes/font_size = 50
 text = "レベルセレクト
 Select Level"
@@ -44,18 +50,18 @@ horizontal_alignment = 1
 
 [node name="Duckageddon Normal" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.835294, 0.835294, 0, 1)
+theme_override_colors/font_color = Color(0.94902, 0.701961, 0.898039, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_emkfd")
+theme_override_fonts/font = ExtResource("3_emkfd")
 theme_override_font_sizes/font_size = 40
 text = "ダッカゲドン（ノーマル）
 DUCKAGEDDON (Normal)"
 
 [node name="Duckageddon Hard" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.262745, 0, 1)
+theme_override_colors/font_color = Color(1, 0.435294, 0.556863, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_emkfd")
+theme_override_fonts/font = ExtResource("3_emkfd")
 theme_override_font_sizes/font_size = 40
 text = "ダッカゲドン（ハード）
 DUCKAGEDDON (Hard)"

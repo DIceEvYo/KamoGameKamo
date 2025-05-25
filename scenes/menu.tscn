@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjpntnaqddbji"]
+[gd_scene load_steps=8 format=3 uid="uid://cjpntnaqddbji"]
 
 [ext_resource type="Script" uid="uid://m8x1fxxo1ufx" path="res://menu.gd" id="1_yqeox"]
 [ext_resource type="AudioStream" uid="uid://d3caia1k4t23n" path="res://assets/music/bruhduckpiano.mp3" id="2_4ytvr"]
-[ext_resource type="Texture2D" uid="uid://b3cv6ldnww0v8" path="res://assets/イラスト/イラストファイル/イラストファイル.png" id="2_mhnvy"]
-[ext_resource type="FontFile" uid="uid://crk0ecmel4ny" path="res://assets/font/Atop-R99O3.ttf" id="2_vjb58"]
-[ext_resource type="Texture2D" uid="uid://bfgx4g1ycjp01" path="res://assets/イラスト/イラストファイル/イラストファイル1.png" id="3_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://dilk1dcpj6cui" path="res://assets/イラスト/イラストファイル/イラストファイル.png" id="2_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://cnp65gj6i5s7x" path="res://assets/イラスト/イラストファイル/イラストファイル1.png" id="3_4ytvr"]
+[ext_resource type="FontFile" uid="uid://tlkgqldxw20n" path="res://assets/font/CherryBombOne-Regular.ttf" id="5_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://ctv7avhtov4r7" path="res://assets/イラスト/logo.png" id="6_g3eks"]
 
 [sub_resource type="Theme" id="Theme_yqeox"]
 
@@ -30,7 +31,7 @@ scale = Vector2(3.16, 1)
 texture = ExtResource("3_4ytvr")
 
 [node name="イラストファイル" type="Sprite2D" parent="."]
-position = Vector2(263, -23)
+position = Vector2(287, -23)
 scale = Vector2(0.76, 0.76)
 texture = ExtResource("2_mhnvy")
 
@@ -41,10 +42,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -618.0
-offset_top = -267.0
-offset_right = -11.0
-offset_bottom = 268.0
+offset_left = -627.0
+offset_top = -285.0
+offset_right = 52.0
+offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -54,11 +55,11 @@ theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.857825, 0.744954, 0, 1)
+theme_override_colors/font_color = Color(0.419608, 0.466667, 0.635294, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_fonts/font = ExtResource("5_4ytvr")
 theme_override_font_sizes/font_size = 50
-text = "鴨ゲームかも
+text = "かもゲームかも
 Probably a Duck Game"
 horizontal_alignment = 1
 
@@ -66,7 +67,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme = SubResource("Theme_yqeox")
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_fonts/font = ExtResource("5_4ytvr")
 theme_override_font_sizes/font_size = 40
 text = "プレイ
 Play"
@@ -74,18 +75,23 @@ Play"
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_fonts/font = ExtResource("5_4ytvr")
 theme_override_font_sizes/font_size = 40
-text = "設定
+text = "せってい
 Options"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_vjb58")
+theme_override_fonts/font = ExtResource("5_4ytvr")
 theme_override_font_sizes/font_size = 40
 text = "やめる
 Quit"
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(547, -245)
+scale = Vector2(0.244, 0.244)
+texture = ExtResource("6_g3eks")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

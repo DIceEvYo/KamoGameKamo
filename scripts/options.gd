@@ -3,7 +3,6 @@ extends Control
 var came_from_pause_menu: bool = false
 
 func _on_back_pressed() -> void:
-	queue_free()
 	if GameState.came_from_pause_menu:
 		get_tree().paused = true
 		GameState.came_from_pause_menu = false
