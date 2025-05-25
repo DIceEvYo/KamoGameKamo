@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjpntnaqddbji"]
+[gd_scene load_steps=7 format=3 uid="uid://cjpntnaqddbji"]
 
 [ext_resource type="Script" uid="uid://m8x1fxxo1ufx" path="res://menu.gd" id="1_yqeox"]
+[ext_resource type="AudioStream" uid="uid://d3caia1k4t23n" path="res://assets/music/bruhduckpiano.mp3" id="2_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://b3cv6ldnww0v8" path="res://assets/イラスト/イラストファイル/イラストファイル.png" id="2_mhnvy"]
 [ext_resource type="FontFile" uid="uid://crk0ecmel4ny" path="res://assets/font/Atop-R99O3.ttf" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://bfgx4g1ycjp01" path="res://assets/イラスト/イラストファイル/イラストファイル1.png" id="3_4ytvr"]
 
 [sub_resource type="Theme" id="Theme_yqeox"]
 
@@ -16,6 +19,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
 
+[node name="Bruhduckpiano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4ytvr")
+volume_db = -16.55
+autoplay = true
+
+[node name="イラストファイル1" type="Sprite2D" parent="."]
+position = Vector2(-504, -40)
+scale = Vector2(3.16, 1)
+texture = ExtResource("3_4ytvr")
+
+[node name="イラストファイル" type="Sprite2D" parent="."]
+position = Vector2(263, -23)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("2_mhnvy")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -23,10 +41,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -303.5
-offset_top = -183.0
-offset_right = 303.5
-offset_bottom = 183.0
+offset_left = -618.0
+offset_top = -267.0
+offset_right = -11.0
+offset_bottom = 268.0
 grow_horizontal = 2
 grow_vertical = 2
 
