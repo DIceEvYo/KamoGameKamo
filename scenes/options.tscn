@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbpwycv5fm7tg" path="res://scripts/options.gd" id="1_c2u1v"]
 [ext_resource type="AudioStream" uid="uid://3yheld1jpkol" path="res://assets/music/bruhduckpiano2.mp3" id="2_2iy26"]
-[ext_resource type="FontFile" uid="uid://crk0ecmel4ny" path="res://assets/font/Atop-R99O3.ttf" id="2_yjkok"]
+[ext_resource type="FontFile" uid="uid://tlkgqldxw20n" path="res://assets/font/CherryBombOne-Regular.ttf" id="3_2iy26"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -42,17 +42,18 @@ theme_override_constants/separation = 20
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.909804, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_fonts/font = ExtResource("3_2iy26")
 theme_override_font_sizes/font_size = 50
-text = "Options"
+text = "オプション
+Options"
 horizontal_alignment = 1
 
 [node name="SpeedLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_fonts/font = ExtResource("3_2iy26")
 theme_override_font_sizes/font_size = 40
-text = "Note Speed"
+text = "ノートそくど　｜　Note Speed"
 horizontal_alignment = 1
 
 [node name="Speed" type="HSlider" parent="MarginContainer/VBoxContainer"]
@@ -61,9 +62,9 @@ layout_mode = 2
 [node name="VolumeLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_fonts/font = ExtResource("3_2iy26")
 theme_override_font_sizes/font_size = 40
-text = "Volume"
+text = "おんりょう　｜　Volume"
 horizontal_alignment = 1
 
 [node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
@@ -78,17 +79,18 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_fonts/font = ExtResource("3_2iy26")
 theme_override_font_sizes/font_size = 40
-text = "Mute"
+text = "　ミュート　｜　Mute"
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_yjkok")
+theme_override_fonts/font = ExtResource("3_2iy26")
 theme_override_font_sizes/font_size = 40
-text = "Back"
+text = "もどる
+Back"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
