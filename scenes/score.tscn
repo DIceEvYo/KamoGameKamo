@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://ih7jgn56alb2"]
+[gd_scene load_steps=3 format=3 uid="uid://b3rmpuynnqwnl"]
+
+[ext_resource type="Script" uid="uid://cln8anfjiwiyf" path="res://scenes/score.gd" id="1_8juob"]
+[ext_resource type="FontFile" uid="uid://crk0ecmel4ny" path="res://assets/font/Atop-R99O3.ttf" id="2_bak1h"]
 
 [node name="Score" type="Control"]
 layout_mode = 3
@@ -7,11 +10,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8juob")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-offset_right = 127.0
-offset_bottom = 44.0
-text = "1000"
+[node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 23.0
+offset_top = 28.0
+offset_right = 374.0
+offset_bottom = 116.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("2_bak1h")
+theme_override_font_sizes/normal_font_size = 41
+text = "0 pts"
 scroll_active = false
+
+[node name="ComboLabel" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 24.0
+offset_top = 94.0
+offset_right = 358.0
+offset_bottom = 146.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("2_bak1h")
+theme_override_font_sizes/normal_font_size = 41
+text = "x0 Combo"

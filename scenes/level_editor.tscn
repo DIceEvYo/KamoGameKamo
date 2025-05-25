@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfe05ay3nxt8t"]
+
+[ext_resource type="Script" uid="uid://biaqpmd7s6dfa" path="res://scenes/level_editor.gd" id="1_ci1mn"]
+[ext_resource type="AudioStream" uid="uid://c6aryk7r4gndy" path="res://assets/music/bruhduck.mp3" id="2_1mfi1"]
+
+[node name="LevelEditor" type="Node2D"]
+script = ExtResource("1_ci1mn")
+
+[node name="DuckMoosic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1mfi1")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="finished" from="DuckMoosic" to="." method="_on_duck_moosic_finished"]

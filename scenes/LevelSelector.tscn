@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1x4g10o2mhyl"]
+
+[ext_resource type="Script" uid="uid://wvtxvmbqigoc" path="res://scenes/level_selector.gd" id="1_8ixoo"]
+[ext_resource type="FontFile" uid="uid://crk0ecmel4ny" path="res://assets/font/Atop-R99O3.ttf" id="2_emkfd"]
+
+[node name="LevelSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ixoo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_emkfd")
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "[center]Select Level"
+
+[node name="Duckageddon Normal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.835294, 0.835294, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_emkfd")
+theme_override_font_sizes/font_size = 20
+text = "DUCKAGEDDON (Normal)"
+
+[node name="Duckageddon Hard" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.262745, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_emkfd")
+theme_override_font_sizes/font_size = 20
+text = "DUCKAGEDDON (Hard)"
