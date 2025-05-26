@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2k6kti5idaog"]
+[gd_scene load_steps=5 format=3 uid="uid://c2k6kti5idaog"]
 
 [ext_resource type="Script" uid="uid://dbpwycv5fm7tg" path="res://scripts/options.gd" id="1_c2u1v"]
+[ext_resource type="AudioStream" uid="uid://3yheld1jpkol" path="res://assets/music/bruhduckpiano2.mp3" id="2_2iy26"]
+[ext_resource type="Texture2D" uid="uid://cnp65gj6i5s7x" path="res://assets/イラスト/イラストファイル/イラストファイル1.png" id="2_kv8mn"]
+[ext_resource type="FontFile" uid="uid://tlkgqldxw20n" path="res://assets/font/CherryBombOne-Regular.ttf" id="3_2iy26"]
 
 [node name="Options" type="Control"]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -12,6 +16,24 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c2u1v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -672.0
+offset_top = -377.0
+offset_right = 656.0
+offset_bottom = 379.0
+color = Color(0, 0, 0, 0.627451)
+
+[node name="イラストファイル1" type="Sprite2D" parent="."]
+position = Vector2(-19.5, -4)
+scale = Vector2(2.017, 1)
+texture = ExtResource("2_kv8mn")
+
+
+[node name="Bruhduckpiano2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2iy26")
+volume_db = -16.55
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -31,28 +53,62 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Speed" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="OptionsLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-text = "Speed"
+theme_override_colors/font_color = Color(0.576471, 0.341176, 0.654902, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_2iy26")
+theme_override_font_sizes/font_size = 50
+text = "オプション
+Options"
+horizontal_alignment = 1
 
-[node name="Vol_Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="SpeedLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Volume"
+theme_override_colors/font_color = Color(0.756863, 0.835294, 0.913725, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_2iy26")
+theme_override_font_sizes/font_size = 40
+text = "ノートそくど　｜　Note Speed"
+horizontal_alignment = 1
+
+[node name="Speed" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.756863, 0.835294, 0.913725, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_2iy26")
+theme_override_font_sizes/font_size = 40
+text = "おんりょう　｜　Volume"
 horizontal_alignment = 1
 
 [node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [node name="Mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Mute"
+theme_override_colors/font_color = Color(0.756863, 0.835294, 0.913725, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_2iy26")
+theme_override_font_sizes/font_size = 40
+text = "　ミュート　｜　Mute"
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Back"
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_2iy26")
+theme_override_font_sizes/font_size = 40
+text = "もどる
+Back"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
