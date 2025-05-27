@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dewldqjxnsibk"]
 
 [ext_resource type="Script" uid="uid://5svchfdky1xm" path="res://scripts/pause_menu.gd" id="1_n87rw"]
-[ext_resource type="FontFile" uid="uid://crk0ecmel4ny" path="res://assets/font/Atop-R99O3.ttf" id="2_myx47"]
+[ext_resource type="FontFile" uid="uid://tlkgqldxw20n" path="res://assets/font/CherryBombOne-Regular.ttf" id="2_myx47"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -51,26 +51,26 @@ layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_myx47")
 theme_override_font_sizes/font_size = 40
-text = "🦆 Paused  🦆"
+text = "ポーズ　Paused"
 horizontal_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_myx47")
 theme_override_font_sizes/font_size = 30
-text = "Resume"
+text = "つづく　Resume"
 
 [node name="OptionsButton" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_myx47")
 theme_override_font_sizes/font_size = 30
-text = "Options"
+text = "オプション　Options"
 
 [node name="ExitButton" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_myx47")
 theme_override_font_sizes/font_size = 30
-text = "Exit"
+text = "やめる　Exit"
 
 [connection signal="pressed" from="GridContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="GridContainer/OptionsButton" to="." method="_on_options_button_pressed"]
